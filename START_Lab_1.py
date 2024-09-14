@@ -11,20 +11,27 @@ def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
     is_odd = None
-    name = "Blessing"
-    name_count =  len(name)
-    print(name_count)
-    if name_count % 2 == 0:
-        print('True')
-
+    if not isinstance(name, str):
+        return None
+    length = len(name)
+    if length % 2 == 0:
+        is_odd = "false"
+    else:
+        is_odd = "true"
+    
     return is_odd
 
 def lab1Question3(input_string, input_number):
     # Take in two inputs - a string and a number
     # Return the character of the string in the index given by number.  If this index does not exist, then return -1.
-    character_at = -1
 
-    return character_at
+    
+    character_at =-1
+    
+    if 0 <= input_number < len(input_string):
+        return input_string[input_number]
+    
+    return character_at 
 
 def lab1Question4(file_name):
     # Take an input of a file name. 
