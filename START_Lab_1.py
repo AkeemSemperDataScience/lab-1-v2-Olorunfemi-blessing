@@ -34,12 +34,13 @@ def lab1Question3(input_string, input_number):
     return character_at 
 
 def lab1Question4(file_name):
-    # Take an input of a file name. 
-    # Read that file and return a list of all numbers in that file
+    # Read the file and return a list of all numbers in it
     list_of_nums = []
-    file_name = open(file_name, 'r')
-    list_of_nums =[file_name]
-
+    try:
+        with open(file_name, 'r') as file:
+            return [int(word) for line in file for word in line.split() if word.isdigit()]
+    except FileNotFoundError:
+        print(f"File '{file_name}' not found.")
     return list_of_nums
 
 def lab1Question5(list_numbers):
