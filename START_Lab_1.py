@@ -15,9 +15,9 @@ def lab1Question2(name):
         return None
     length = len(name)
     if length % 2 == 0:
-        is_odd = "false"
+        is_odd = False
     else:
-        is_odd = "true"
+        is_odd = True
     
     return is_odd
 
@@ -41,10 +41,14 @@ def lab1Question4(file_name):
     return list_of_nums
 
 def lab1Question5(list_numbers):
-    # Take an input of a list of numbers
-    # Return the mode from that list. 
+    # Take a list of numbers
+    # Return the mode from that list
     mode_of_list = None
-
+    from collections import Counter
+    
+    # Find the mode using Counter
+    mode_of_list = Counter(list_numbers).most_common(1)[0][0]
+    
     return mode_of_list
 
 def lab1Question6(quarters, dimes, nickels, pennies):
